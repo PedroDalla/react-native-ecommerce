@@ -4,19 +4,28 @@ export const styles = StyleSheet.create({
     shoppingContainer: {
         flex: 1,
         backgroundColor: '#fff',
-        padding: 20,
     },
     shoppingTitle: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 10,
+        padding: 20
+    },
+    headerContainer: {
+        marginTop: 5,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between"
     },
     shoppingListContainer: {
         alignItems: 'center',
+        width: "100%"
     },
     shoppingItemContainer: {
         alignItems: 'center',
         marginBottom: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: "#d8d8d8",
+        padding: 20,
     },
     shoppingItemImage: {
         width: 300,
@@ -25,7 +34,8 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
     },
     shoppingItemTitle: {
-        fontSize: 18,
+        fontSize: 20,
+        fontWeight: "600",
         marginBottom: 5,
     },
     shoppingItemPrice: {
@@ -37,6 +47,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#00C853',
         padding: 10,
         borderRadius: 5,
+        marginBottom: 10,
     },
     addToCartButtonText: {
         color: '#fff',
@@ -45,11 +56,24 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
     },
     cartContainer: {
-        width: "100%",
-        padding: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
         alignItems: "flex-end"
     },
     cartText: {
-        fontSize: 18,
-    }
+        fontSize: 15,
+        width: 26,
+        height: 26,
+        borderRadius: 13,
+        fontWeight: "600",
+        backgroundColor: "green",
+        // display: "flex",
+        // justifyContent: "center",
+        // alignItems: "center",
+        textAlign: "center",
+        color: "#ffffff",
+        position: "absolute",
+        top: 0,
+        right: 10
+    },
 });

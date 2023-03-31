@@ -14,6 +14,7 @@ export type Product = {
     shortDescription: string,
 }
 
+//Simple function that mocks an API call with a slight delay of 0.2 seconds
 export const getProducts: (options?: GetProductsOptionsParams) => Promise<Product[]> = (options) => {
     return new Promise((resolve) => {
         setTimeout(() => {

@@ -29,11 +29,11 @@ export const CartItem: React.FC<CartItemProps> = ({ item, count }) => {
                 <Text style={styles.cartItemPrice}>${item.price}</Text>
                 <View style={styles.counterContainer}>
                     <TouchableOpacity onPress={() => onDecrement()}>
-                        <Text style={styles.counterButton}>-</Text>
+                        <Text style={[styles.counterButton, styles.removeButton]}>-</Text>
                     </TouchableOpacity>
                     <Text style={styles.counterValue}>{count}</Text>
                     <TouchableOpacity onPress={() => onIncrement()}>
-                        <Text style={styles.counterButton}>+</Text>
+                        <Text style={[styles.counterButton, styles.addButton]}>+</Text>
                     </TouchableOpacity>
                 </View>
             </View>

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import { getProducts, Product } from '../../data/api';
 import { useAppSelector } from '../../redux/hooks';
 import { CartItem } from "../CartItem/cartItem"
@@ -57,16 +57,19 @@ export const Cart = () => {
     return (
         <View style={styles.cartContainer}>
             <Text style={styles.cartTitle}>Shopping Cart</Text>
-            <View style={styles.cartItemsContainer}>
-                {products.map(item => {
-                    const itemInCart = cartItems.find(cI => cI.id === item.id)
+            <FlatList
+                data={products}
+                renderItem={listItem => {
+                    const itemInCart = cartItems.find(cI => cI.id === listItem.item.id)
                     const count = itemInCart ? itemInCart.count : 0
 
                     return (
-                        <CartItem key={item.id} item={item} count={count} />
+                        <CartItem key={listItem.item.id} item={listItem.item} count={count} />
                     )
-                })}
-            </View>
+                }}
+                keyExtractor={item => item.id.toString()}
+                contentContainerStyle={styles.cartItemsContainer}
+            />
             <Text style={styles.cartTotal}>Total: ${
                 products.reduce((acc, item) => acc + item.price * (cartItems.find(cI => cI.id === item.id)?.count || 0), 0)}</Text>
             <StatusBar style="auto" />
