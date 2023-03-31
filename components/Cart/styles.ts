@@ -4,20 +4,23 @@ const styles = StyleSheet.create({
     cartContainer: {
         flex: 1,
         backgroundColor: '#fff',
-        padding: 20,
     },
     cartTitle: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 10,
+        padding: 20,
     },
     cartItemsContainer: {
-        flex: 1,
         marginBottom: 20,
+        borderBottomColor: "#d8d8d8",
+        borderBottomWidth: 1,
     },
     cartTotal: {
-        fontSize: 20,
-        fontWeight: 'bold',
+        paddingBottom: 20,
+        paddingRight: 10,
+        fontSize: 24,
+        fontWeight: '600',
         alignSelf: 'flex-end',
     },
     emptyMessageContainer: {

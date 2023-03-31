@@ -63,16 +63,20 @@ export const Shopping: React.FC<ShoppingProps> = ({ navigation }) => {
 
     return (
         <View style={styles.shoppingContainer}>
-            <Text style={styles.shoppingTitle}>Available Items</Text>
+            <View style={styles.headerContainer}>
+                <Text style={styles.shoppingTitle}>Available Items</Text>
+                <TouchableOpacity style={styles.cartContainer} onPress={() => handleCartPress()}>
+                    <AntDesign name="shoppingcart" size={40} color="black" />
+                    <Text style={styles.cartText}>{cart.count}</Text>
+                </TouchableOpacity>
+            </View>
             <FlatList
                 data={products}
                 renderItem={renderShoppingItem}
                 keyExtractor={item => item.id.toString()}
                 contentContainerStyle={styles.shoppingListContainer}
             />
-            <TouchableOpacity style={styles.cartContainer} onPress={() => handleCartPress()}>
-                <Text style={styles.cartText}><AntDesign name="shoppingcart" size={28} color="black" />{cart.count}</Text>
-            </TouchableOpacity>
+
             <StatusBar style="auto" />
         </View>
     );
